@@ -3,6 +3,7 @@
 > AI-powered clinical trial intelligence that watches the market so you don't have to.
 
 ![Synapse](https://img.shields.io/badge/Built%20with-Claude%20Opus%204.5-purple)
+![Synapse](https://img.shields.io/badge/Built%20with-Kiro-purple)
 ![Yutori](https://img.shields.io/badge/Powered%20by-Yutori%20Browsing-blue)
 
 ## Overview
