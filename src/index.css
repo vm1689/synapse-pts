@@ -1,0 +1,313 @@
+/* Synapse - Main Styles */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(160deg, rgba(40, 40, 40, 0.95) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Synapse App Container */
+.ferma-app-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Synapse Header */
+.ferma-header {
+  flex-shrink: 0;
+}
+
+/* Synapse Main Layout */
+.ferma-main-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Plan Sidebar */
+.ferma-plan-sidebar {
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+/* Chat Sidebar */
+.ferma-chat-sidebar {
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+/* Main Content Area */
+.ferma-content-area {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Tabs Bar */
+.ferma-tabs-bar {
+  padding: 0 24px;
+}
+
+/* Article Content */
+.ferma-article-content {
+  padding: 24px 32px;
+  overflow: auto;
+}
+
+/* Data Table */
+.ferma-data-table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ferma-data-table {
+  min-width: 800px;
+}
+
+/* Alerts Split View */
+.ferma-alerts-container {
+  display: flex;
+  height: 100%;
+}
+
+.ferma-alerts-list {
+  width: 280px;
+  flex-shrink: 0;
+  overflow: auto;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ferma-alerts-detail {
+  flex: 1;
+  overflow: auto;
+  padding-left: 24px;
+}
+
+/* Slide Layout */
+.ferma-slide-container {
+  height: 100%;
+}
+
+/* Pagination */
+.ferma-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 12px;
+}
+
+/* Hide on mobile utility */
+.ferma-show-mobile {
+  display: none !important;
+}
+
+/* === TABLET: 768px - 1024px === */
+@media (max-width: 1024px) {
+  .ferma-plan-sidebar {
+    width: 240px !important;
+  }
+
+  .ferma-plan-sidebar.collapsed {
+    width: 40px !important;
+  }
+
+  .ferma-chat-sidebar {
+    width: 200px !important;
+  }
+
+  .ferma-chat-sidebar.collapsed {
+    width: 40px !important;
+  }
+}
+
+/* === MOBILE: Below 768px === */
+@media (max-width: 768px) {
+
+  /* Header */
+  .ferma-header {
+    height: 48px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .ferma-header .header-title {
+    display: none !important;
+  }
+
+  .ferma-header .header-logo-text {
+    font-size: 12px !important;
+  }
+
+  .ferma-header .header-share-btn {
+    padding: 8px 14px !important;
+    font-size: 12px !important;
+    height: 34px !important;
+  }
+
+  .ferma-header .header-avatar {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  /* Hide sidebars on mobile */
+  .ferma-plan-sidebar {
+    display: none !important;
+  }
+
+  .ferma-chat-sidebar {
+    display: none !important;
+  }
+
+  /* Main content takes full width */
+  .ferma-content-area {
+    padding-left: 0 !important;
+  }
+
+  /* Tabs Bar */
+  .ferma-tabs-bar {
+    padding: 0 12px !important;
+    margin-top: 8px !important;
+  }
+
+  .ferma-tabs-bar .tabs-container {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 4px !important;
+  }
+
+  .ferma-tabs-bar .tab-button {
+    white-space: nowrap;
+    padding: 8px 14px !important;
+    font-size: 12px !important;
+    border-radius: 6px !important;
+  }
+
+  .ferma-tabs-bar .search-container {
+    display: none !important;
+  }
+
+  /* Article Content */
+  .ferma-article-content {
+    padding: 16px !important;
+  }
+
+  /* Data Table */
+  .ferma-data-table {
+    min-width: 580px;
+  }
+
+  .ferma-data-table th,
+  .ferma-data-table td {
+    padding: 10px 8px !important;
+    font-size: 11px !important;
+  }
+
+  /* Alerts */
+  .ferma-alerts-container {
+    flex-direction: column !important;
+  }
+
+  .ferma-alerts-list {
+    width: 100% !important;
+    max-height: 40% !important;
+    min-height: 140px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-right: none !important;
+  }
+
+  .ferma-alerts-detail {
+    width: 100% !important;
+    flex: 1;
+    padding-left: 0 !important;
+    padding-top: 16px !important;
+  }
+
+  /* Pagination */
+  .ferma-pagination {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    padding: 12px 8px !important;
+    justify-content: center !important;
+  }
+
+  /* Utilities */
+  .ferma-hide-mobile {
+    display: none !important;
+  }
+
+  .ferma-show-mobile {
+    display: flex !important;
+  }
+}
+
+/* === SMALL MOBILE: Below 480px === */
+@media (max-width: 480px) {
+  .ferma-header {
+    height: 44px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .ferma-tabs-bar {
+    padding: 0 8px !important;
+  }
+
+  .ferma-tabs-bar .tab-button {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+  }
+
+  .ferma-article-content {
+    padding: 12px !important;
+  }
+
+  .ferma-data-table {
+    min-width: 520px;
+  }
+
+  .ferma-data-table th,
+  .ferma-data-table td {
+    padding: 8px 6px !important;
+    font-size: 10px !important;
+  }
+}
